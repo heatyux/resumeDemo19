@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <script src="//at.alicdn.com/t/font_1057099_j5aqb0klx7s.js"></script>
+    <title>个人简历</title>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="topNavBar">
+        <div class="topNavBar-inner clearfix">
+            <a class="logo" href="#">   
+                <span class="rs">RS</span>  
+                <span class="card">card</span>
+            </a>
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">技能</a></li>
+                    <li><a href="#">作品</a></li>
+                    <li><a href="#">日历</a></li>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>            
+            </nav>
+        </div>
+    </div>
+    
+    <div class="banner">
+        <div class="banner-mask"></div>
+    </div>
+
+    <main>
+        <div class="userCard">
+            <div class="pictureAndText clearfix">
+                <div class="picture">
+                    <img src="./imgs/avatar.jpg" alt="头像">
+                </div>
+                <div class="text">
+                    <span class="welcome">Hello
+                        <span class="triangle"></span>
+                    </span>
+                    <h1>许 煜</h1>
+                    <p>前端工程师</p>
+                    <hr>
+                    <dl class="clearfix">
+                        <dt>年龄</dt>
+                        <dd>23</dd>
+                        <dt>所在城市</dt>
+                        <dd>深圳</dd>
+                        <dt>邮箱</dt>
+                        <dd>421743974@qq.com</dd>
+                        <dt>手机</dt>
+                        <dd>13035700010</dd>
+                    </dl>
+                </div>
+            </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-hexo"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+            </footer>
+        </div>
+        <p class="download-wrapper">
+            <a class="download" href="./resume.pdf" target="__blank">下载PDF简历</a>
+        </p>
+        <p class="selfIntroduction">在2019年学习web前端工程师课程，请多指教!</p>
+        
+        <section class="skills">
+            <h2>技能</h2>
+            <ol class="clearfix">
+                <li>
+                    <h3>HTML &amp; CSS</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:10%"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>JavaScript</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:20%"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>JQuery</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:30%"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Vue</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:40%"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>React</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:50%"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>HTTP</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width:60%"></div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="portfolio">
+            <h2>作品集</h2>
+            <nav>
+                <ol class="clearfix">
+                    <li id="portfolioAll">所有</li>
+                    <li id="portfolioFrame">框架</li>
+                    <li id="portfolioVallina">原生JS&amp;CSS</li>
+                </ol>
+                <div id="portfolioBar" class="bar state-1">
+                    <div class="bar-inner"></div>
+                </div>
+            </nav>
+
+            <div class="works clearfix">
+                <div class="big">
+                    <img src="./imgs/1.jpg" alt="作品集1">
+                </div>
+                <div class="small" style="top:0; right:0;">
+                    <img src="./imgs/2.jpg" alt="作品集2">
+                </div>
+                <div class="small" style="top: 312px; right:0">
+                    <img src="./imgs/3.jpg" alt="作品集3">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        portfolioAll.onclick = function() {
+            portfolioBar.className = "bar state-1";
+        }
+
+        portfolioFrame.onclick = function() {
+            portfolioBar.className = "bar state-2";
+        }
+
+        portfolioVallina.onclick = function() {
+            portfolioBar.className = "bar state-3";
+        }
+    </script>
+</body>
+</html>
