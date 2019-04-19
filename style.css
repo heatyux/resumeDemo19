@@ -48,6 +48,16 @@ h6 {
   top: 0;
   left: 0;
   width: 100%;
+  transition: all .5s;
+  color: #b7b7b7;
+}
+
+.topNavBar.sticky {
+  background: white;
+  padding: 10px 0;
+  color: #3d4451;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .topNavBar-inner {
@@ -57,7 +67,7 @@ h6 {
 .topNavBar nav {
   float: right;
   padding-top: 5px;
-  padding-bottom: 3px;  
+  padding-bottom: 3px; 
 }
 
 .topNavBar nav > ul {
@@ -74,8 +84,7 @@ h6 {
 
 .topNavBar nav > ul > li > a {
   font-size: 12px;
-  color: #B7B7B7;
-  /* text-decoration: none; */
+  color: inherit;
   font-weight: bold;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;

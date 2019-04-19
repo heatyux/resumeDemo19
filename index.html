@@ -38,7 +38,7 @@
     <div class="site-welcome active" id="siteWelcome">
         <div class="loadding"></div>
     </div>
-    <div class="topNavBar">
+    <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#">   
                 <span class="rs">RS</span>  
@@ -200,6 +200,14 @@
         portfolioVallina.onclick = function() {
             portfolioBar.className = "bar state-3";
         }
+
+        window.onscroll = function(xxx) {
+            if(window.scrollY > 0) {
+                topNavBar.classList.add("sticky");
+            }else {
+                topNavBar.classList.remove("sticky");
+            }
+        };
     </script>
 </body>
 </html>
