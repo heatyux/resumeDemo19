@@ -1,0 +1,34 @@
+.loadding {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.loadding::before, .loadding::after{
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: s 2s infinite linear;
+}
+
+.loadding::after {
+  animation-delay: 1s;
+}
+
+@keyframes s {
+  0% {
+    width: 0; height:0;  opacity: 1;
+    
+  }
+  100% {
+    width:100px; height: 100px; opacity: 0;
+  }
+}

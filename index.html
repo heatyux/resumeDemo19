@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./loadding.css">
     <script src="//at.alicdn.com/t/font_1057099_j5aqb0klx7s.js"></script>
     <title>个人简历</title>
     <style type="text/css">
@@ -14,9 +15,29 @@
            fill: currentColor;
            overflow: hidden;
         }
+
+        .site-welcome {
+            display: none;
+            background: gray;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .site-welcome.active {
+            display: flex;
+        }
     </style>
 </head>
 <body>
+    <div class="site-welcome active" id="siteWelcome">
+        <div class="loadding"></div>
+    </div>
     <div class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#">   
@@ -164,6 +185,10 @@
     </main>
     
     <script>
+        setTimeout(function(){
+            siteWelcome.classList.remove("active")
+        }, 1000);
+
         portfolioAll.onclick = function() {
             portfolioBar.className = "bar state-1";
         }
