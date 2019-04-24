@@ -80,6 +80,7 @@ h6 {
   float: left;
   margin-left: 17px;
   margin-right: 17px;
+  position: relative;
 }
 
 .topNavBar nav > ul > li > a {
@@ -91,10 +92,57 @@ h6 {
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
+  position: relative;
 }
 
-.topNavBar nav > ul > li > a:hover {
-  border-bottom: 3px solid #E06567;
+.topNavBar nav > ul > li.active > a::after {
+  /* border-bottom: 3px solid #E06567; */
+  content:" ";
+  width: 100%;
+  height: 3px;
+  display: block;
+  background: #E06567;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  animation: menuSilde .3s;
+}
+
+@keyframes menuSilde {
+  0%{
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.topNavBar .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: #3d4451;
+  background: white;
+  animation: menuSlide .3s;
+}
+
+@keyframes menuSlide {
+  0% {
+    margin-right: 100%;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+.topNavBar .submenu > li {
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+.topNavBar li.active .submenu {
+  display: block;
 }
 
 .topNavBar .logo {
