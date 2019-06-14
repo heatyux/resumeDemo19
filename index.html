@@ -200,7 +200,7 @@
             </div>
         </section>
     </main>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
     <script>
         setTimeout(function () {
             siteWelcome.classList.remove("active")
@@ -220,7 +220,7 @@
 
         //添加offset
         let specialTags = document.querySelectorAll('[data-x]');
-        for(let i = 0; i < specialTags.length; i++) {
+        for (let i = 0; i < specialTags.length; i++) {
             specialTags[i].classList.add('offset');
         }
         findClosest();
@@ -283,7 +283,26 @@
         }
 
         //滚动到指定元素
-        let aTags = document.querySelectorAll("nav.menu > ul > li > a");
+        // let aTags = document.querySelectorAll("nav.menu > ul > li > a");
+        // for (let i = 0; i < aTags.length; i++) {
+        //     aTags[i].onclick = function (x) {
+        //         x.preventDefault();
+        //         let a = x.currentTarget;
+        //         let href = a.getAttribute("href");
+        //         let element = document.querySelector(href);
+        //         let top = element.offsetTop;
+        //         window.scrollTo(0, top - 80);
+        //     }
+        // }
+
+        //设置滚动时长与速度
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a');
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
+
         for (let i = 0; i < aTags.length; i++) {
             aTags[i].onclick = function (x) {
                 x.preventDefault();
@@ -291,9 +310,25 @@
                 let href = a.getAttribute("href");
                 let element = document.querySelector(href);
                 let top = element.offsetTop;
-                window.scrollTo(0, top - 80);
+                // window.scrollTo(0, top - 80);
+
+                let currentTop = window.scrollY;
+                let targetTop = top - 80;
+                let s = targetTop - currentTop;
+                let t = Math.abs((s / 100) * 300);
+                if (t > 500) { t = 500 }
+
+                const coords = { y: currentTop };
+                const tween = new TWEEN.Tween(coords)
+                    .to({ y: targetTop }, t)
+                    .easing(TWEEN.Easing.Cubic.InOut)
+                    .onUpdate(() => {
+                        window.scrollTo(0, coords.y);
+                    })
+                    .start();
             }
         }
+        
     </script>
 </body>
 

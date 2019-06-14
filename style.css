@@ -339,6 +339,7 @@ section.portfolio {
   background: rgb(250, 225, 225);
   border-radius: 2px;
   margin: 6px 0 38px;
+  overflow: hidden;
 }
 
 .skills ol .progress {
@@ -346,6 +347,12 @@ section.portfolio {
   width: 30%;
   background: rgb(230, 104, 106);
   border-radius: 2px;
+  transform: translateX(0);
+  transition: all 0.5s;
+}
+
+.skills.offset ol .progress {
+  transform: translateX(-100%);
 }
 
 .portfolio {
@@ -407,6 +414,7 @@ section.portfolio {
   height: 597px;
   position: relative;
   margin-top: 28px;
+  margin-bottom: 100px;
 }
 
 .portfolio .works > div {
