@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
     <title>个人简历</title>
     <style type="text/css">
         .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
 
         .site-welcome {
@@ -34,14 +36,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="site-welcome active" id="siteWelcome">
         <div class="loadding"></div>
     </div>
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
-            <a class="logo" href="#">   
-                <span class="rs">RS</span>  
+            <a class="logo" href="#">
+                <span class="rs">RS</span>
                 <span class="card">card</span>
             </a>
             <nav class="menu">
@@ -67,17 +70,17 @@
                     </li>
                     <li><a href="#">联系方式</a></li>
                     <li><a href="#">其他</a></li>
-                </ul>            
+                </ul>
             </nav>
         </div>
     </div>
-    
+
     <div class="banner">
         <div class="banner-mask"></div>
     </div>
 
     <main>
-        <div class="userCard" id="siteAbout">
+        <div data-x class="userCard" id="siteAbout">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./imgs/avatar.jpg" alt="头像">
@@ -128,8 +131,8 @@
             <a class="download" href="./resume.pdf" target="__blank">下载PDF简历</a>
         </p>
         <p class="selfIntroduction">在2019年学习web前端工程师课程，请多指教!</p>
-        
-        <section class="skills" id="siteSkills">
+
+        <section data-x class="skills" id="siteSkills">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -171,7 +174,7 @@
             </ol>
         </section>
 
-        <section class="portfolio" id="siteWorks">
+        <section data-x class="portfolio" id="siteWorks">
             <h2>作品集</h2>
             <nav>
                 <ol class="clearfix">
@@ -197,38 +200,67 @@
             </div>
         </section>
     </main>
-    
-    <script>
-        setTimeout(function(){
-            siteWelcome.classList.remove("active")
-        }, 1000);
 
-        portfolioAll.onclick = function() {
+    <script>
+        setTimeout(function () {
+            siteWelcome.classList.remove("active")
+        }, 10);
+
+        portfolioAll.onclick = function () {
             portfolioBar.className = "bar state-1";
         }
 
-        portfolioFrame.onclick = function() {
+        portfolioFrame.onclick = function () {
             portfolioBar.className = "bar state-2";
         }
 
-        portfolioVallina.onclick = function() {
+        portfolioVallina.onclick = function () {
             portfolioBar.className = "bar state-3";
         }
 
+        //添加offset
+        let specialTags = document.querySelectorAll('[data-x]');
+        for(let i = 0; i < specialTags.length; i++) {
+            specialTags[i].classList.add('offset');
+        }
+        findClosest();
+
         //滚动sticky事件
-        window.onscroll = function(xxx) {
-            if(window.scrollY > 0) {
+        window.onscroll = function (xxx) {
+            if (window.scrollY > 0) {
                 topNavBar.classList.add("sticky");
-            }else {
+            } else {
                 topNavBar.classList.remove("sticky");
             }
+            findClosest();
         };
+
+        //添加高亮
+        function findClosest() {
+            let specialTags = document.querySelectorAll('[data-x]');
+            let minIndex = 0;
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i;
+                }
+            }
+            specialTags[minIndex].classList.remove('offset');
+            let id = specialTags[minIndex].id;
+            let aTag = document.querySelector('a[href="#' + id + '"]');
+            let liTag = aTag.parentNode;
+            let brotherTag = liTag.parentNode.children;
+            for (let i = 0; i < brotherTag.length; i++) {
+                brotherTag[i].classList.remove("highlight");
+            }
+            liTag.classList.add("highlight");
+        }
+
 
         //二级菜单
         // let liTags = document.getElementsByClassName("menuTigger");
         let liTags = document.querySelectorAll("nav.menu > ul > li")
-        for(let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function(x) {
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
                 x.currentTarget.classList.add("active");
                 // let li = x.currentTarget;
                 // let child = li.getElementsByTagName('ul')[0];
@@ -238,7 +270,7 @@
                 // }
                 // child.classList.add("active");
             }
-            liTags[i].onmouseleave = function(x) {
+            liTags[i].onmouseleave = function (x) {
                 x.currentTarget.classList.remove("active");
                 // let li = x.currentTarget;
                 // let child = li.getElementsByTagName('ul')[0];
@@ -252,8 +284,8 @@
 
         //滚动到指定元素
         let aTags = document.querySelectorAll("nav.menu > ul > li > a");
-        for(let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function(x) {
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
                 x.preventDefault();
                 let a = x.currentTarget;
                 let href = a.getAttribute("href");
@@ -264,4 +296,5 @@
         }
     </script>
 </body>
+
 </html>
