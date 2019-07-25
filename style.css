@@ -38,6 +38,14 @@ h6 {
   clear: both;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
 [data-x].offset {
   transform: translateY(100px);
 }
@@ -359,65 +367,24 @@ section.portfolio {
   text-align: center;
 }
 
-.portfolio nav {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 32px;
+.portfolio h2 {
+  margin-bottom: 32px;
 }
 
-.portfolio ol {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
+section.portfolio .swiper-container {
+  width: 668px;
+  height: 501px;
 }
 
-.portfolio ol li {
-  float: left;
-  margin-left: 42px;
+section.portfolio {
+  max-width: 860px;
+  margin-bottom: 200px;
 }
 
-.portfolio ol li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .bar {
-  height: 5px;
-  border-radius: 2px;
-  background: white;
-}
-
-.portfolio .bar-inner {
-  height: 100%;
-  border-radius: 2px;
-  transition: all .5s;
-}
-
-.portfolio .bar.state-1 .bar-inner {
-  margin-left: 0;
-  width: 40px;
-  background: rgb(230, 104, 106);
-}
-
-.portfolio .bar.state-2 .bar-inner {
-  margin-left: 66px;
-  width: 50px;
-  background: rgb(230, 104, 106);
-}
-
-.portfolio .bar.state-3 .bar-inner {
-  margin-left: 142px;
-  width: 96px;
-  background: rgb(230, 104, 106);
-}
-
-.portfolio .works {
-  height: 597px;
-  position: relative;
-  margin-top: 28px;
-  margin-bottom: 100px;
-}
-
-.portfolio .works > div {
-  float: left;
-  position: absolute;
+section.portfolio .swiper-button-prev,
+section.portfolio .swiper-button-next {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
 }

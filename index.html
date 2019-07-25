@@ -1,336 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./loadding.css">
-    <script src="//at.alicdn.com/t/font_1057099_j5aqb0klx7s.js"></script>
-    <title>个人简历</title>
-    <style type="text/css">
-        .icon {
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
-        }
-
-        .site-welcome {
-            display: none;
-            background: gray;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .site-welcome.active {
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//at.alicdn.com/t/font_1057099_j5aqb0klx7s.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>个人简历</title>
 </head>
 
+
 <body>
-    <div class="site-welcome active" id="siteWelcome">
-        <div class="loadding"></div>
+
+  <div id="topNavBar" class="topNavBar">
+    <div class="topNavBar-inner clearfix">
+      <a class="logo" href="#">
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
+      <nav class="menu">
+        <ul class="clearfix">
+          <li><a href="#siteAbout">关于</a></li>
+          <li><a href="#siteSkills">技能</a></li>
+          <li>
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li><a href="#">日历</a></li>
+          <li>
+            <a href="#">博客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
+          </li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">其他</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="topNavBar" class="topNavBar">
-        <div class="topNavBar-inner clearfix">
-            <a class="logo" href="#">
-                <span class="rs">RS</span>
-                <span class="card">card</span>
-            </a>
-            <nav class="menu">
-                <ul class="clearfix">
-                    <li><a href="#siteAbout">关于</a></li>
-                    <li><a href="#siteSkills">技能</a></li>
-                    <li>
-                        <a href="#siteWorks">作品</a>
-                        <ul class="submenu">
-                            <li>作品1</li>
-                            <li>作品2</li>
-                            <li>作品3</li>
-                        </ul>
-                    </li>
-                    <li><a href="#">日历</a></li>
-                    <li>
-                        <a href="#">博客</a>
-                        <ul class="submenu">
-                            <li>博客1</li>
-                            <li>博客2</li>
-                            <li>博客3</li>
-                        </ul>
-                    </li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
-                </ul>
-            </nav>
+  </div>
+
+  <div class="banner">
+    <div class="banner-mask"></div>
+  </div>
+
+  <main>
+    <div data-x class="userCard" id="siteAbout">
+      <div class="pictureAndText clearfix">
+        <div class="picture">
+          <img src="./imgs/avatar.jpg" alt="头像">
         </div>
-    </div>
-
-    <div class="banner">
-        <div class="banner-mask"></div>
-    </div>
-
-    <main>
-        <div data-x class="userCard" id="siteAbout">
-            <div class="pictureAndText clearfix">
-                <div class="picture">
-                    <img src="./imgs/avatar.jpg" alt="头像">
-                </div>
-                <div class="text">
-                    <span class="welcome">Hello
-                        <span class="triangle"></span>
-                    </span>
-                    <h1>许 煜</h1>
-                    <p>前端工程师</p>
-                    <hr>
-                    <dl class="clearfix">
-                        <dt>年龄</dt>
-                        <dd>23</dd>
-                        <dt>所在城市</dt>
-                        <dd>深圳</dd>
-                        <dt>邮箱</dt>
-                        <dd>421743974@qq.com</dd>
-                        <dt>手机</dt>
-                        <dd>13035700010</dd>
-                    </dl>
-                </div>
-            </div>
-            <footer class="media">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-hexo"></use>
-                    </svg>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-facebook"></use>
-                    </svg>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-github"></use>
-                    </svg>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-twitter"></use>
-                    </svg>
-                </a>
-            </footer>
+        <div class="text">
+          <span class="welcome">Hello
+            <span class="triangle"></span>
+          </span>
+          <h1>许 煜</h1>
+          <p>前端工程师</p>
+          <hr>
+          <dl class="clearfix">
+            <dt>年龄</dt>
+            <dd>23</dd>
+            <dt>所在城市</dt>
+            <dd>深圳</dd>
+            <dt>邮箱</dt>
+            <dd>421743974@qq.com</dd>
+            <dt>手机</dt>
+            <dd>13035700010</dd>
+          </dl>
         </div>
-        <p class="download-wrapper">
-            <a class="download" href="./resume.pdf" target="__blank">下载PDF简历</a>
-        </p>
-        <p class="selfIntroduction">在2019年学习web前端工程师课程，请多指教!</p>
+      </div>
+      <footer class="media">
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-hexo"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-facebook"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-twitter"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+    <p class="download-wrapper">
+      <a class="download" href="./resume.pdf" target="__blank">下载PDF简历</a>
+    </p>
+    <p class="selfIntroduction">在2019年学习web前端工程师课程，请多指教!</p>
 
-        <section data-x class="skills" id="siteSkills">
-            <h2>技能</h2>
-            <ol class="clearfix">
-                <li>
-                    <h3>HTML &amp; CSS</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:10%"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>JavaScript</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:20%"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>JQuery</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:30%"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>Vue</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:40%"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>React</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:50%"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>HTTP</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width:60%"></div>
-                    </div>
-                </li>
-            </ol>
-        </section>
+    <section data-x class="skills" id="siteSkills">
+      <h2>技能</h2>
+      <ol class="clearfix">
+        <li>
+          <h3>HTML &amp; CSS</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:10%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:20%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JQuery</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:30%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Vue</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:40%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>React</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:50%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>HTTP</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-        <section data-x class="portfolio" id="siteWorks">
-            <h2>作品集</h2>
-            <nav>
-                <ol class="clearfix">
-                    <li id="portfolioAll">所有</li>
-                    <li id="portfolioFrame">框架</li>
-                    <li id="portfolioVallina">原生JS&amp;CSS</li>
-                </ol>
-                <div id="portfolioBar" class="bar state-1">
-                    <div class="bar-inner"></div>
-                </div>
-            </nav>
+    <section data-x class="portfolio" id="siteWorks">
+      <h2>作品集</h2>
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <img class="swiper-slide" src="./imgs/works/demo-keyboard.png">
+          <img class="swiper-slide" src="./imgs/works/demo-canvas.jpg">
+          <img class="swiper-slide" src="./imgs/works/demo-slides.png">
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </section>
+  </main>
 
-            <div class="works clearfix">
-                <div class="big">
-                    <img src="./imgs/1.jpg" alt="作品集1">
-                </div>
-                <div class="small" style="top:0; right:0;">
-                    <img src="./imgs/2.jpg" alt="作品集2">
-                </div>
-                <div class="small" style="top: 312px; right:0">
-                    <img src="./imgs/3.jpg" alt="作品集3">
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
-    <script>
-        setTimeout(function () {
-            siteWelcome.classList.remove("active")
-        }, 10);
-
-        portfolioAll.onclick = function () {
-            portfolioBar.className = "bar state-1";
-        }
-
-        portfolioFrame.onclick = function () {
-            portfolioBar.className = "bar state-2";
-        }
-
-        portfolioVallina.onclick = function () {
-            portfolioBar.className = "bar state-3";
-        }
-
-        //添加offset
-        let specialTags = document.querySelectorAll('[data-x]');
-        for (let i = 0; i < specialTags.length; i++) {
-            specialTags[i].classList.add('offset');
-        }
-        findClosest();
-
-        //滚动sticky事件
-        window.onscroll = function (xxx) {
-            if (window.scrollY > 0) {
-                topNavBar.classList.add("sticky");
-            } else {
-                topNavBar.classList.remove("sticky");
-            }
-            findClosest();
-        };
-
-        //添加高亮
-        function findClosest() {
-            let specialTags = document.querySelectorAll('[data-x]');
-            let minIndex = 0;
-            for (let i = 1; i < specialTags.length; i++) {
-                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-                    minIndex = i;
-                }
-            }
-            specialTags[minIndex].classList.remove('offset');
-            let id = specialTags[minIndex].id;
-            let aTag = document.querySelector('a[href="#' + id + '"]');
-            let liTag = aTag.parentNode;
-            let brotherTag = liTag.parentNode.children;
-            for (let i = 0; i < brotherTag.length; i++) {
-                brotherTag[i].classList.remove("highlight");
-            }
-            liTag.classList.add("highlight");
-        }
-
-
-        //二级菜单
-        // let liTags = document.getElementsByClassName("menuTigger");
-        let liTags = document.querySelectorAll("nav.menu > ul > li")
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function (x) {
-                x.currentTarget.classList.add("active");
-                // let li = x.currentTarget;
-                // let child = li.getElementsByTagName('ul')[0];
-                // let brother = a.nextSibling;
-                // while(brother.tagName !== "UL") {
-                //     brother = brother.nextSibling;
-                // }
-                // child.classList.add("active");
-            }
-            liTags[i].onmouseleave = function (x) {
-                x.currentTarget.classList.remove("active");
-                // let li = x.currentTarget;
-                // let child = li.getElementsByTagName('ul')[0];
-                // let brother = a.nextSibling;
-                // while(brother.tagName !== "UL") {
-                //     brother = brother.nextSibling;
-                // }
-                // child.classList.remove("active");
-            }
-        }
-
-        //滚动到指定元素
-        // let aTags = document.querySelectorAll("nav.menu > ul > li > a");
-        // for (let i = 0; i < aTags.length; i++) {
-        //     aTags[i].onclick = function (x) {
-        //         x.preventDefault();
-        //         let a = x.currentTarget;
-        //         let href = a.getAttribute("href");
-        //         let element = document.querySelector(href);
-        //         let top = element.offsetTop;
-        //         window.scrollTo(0, top - 80);
-        //     }
-        // }
-
-        //设置滚动时长与速度
-        let aTags = document.querySelectorAll('nav.menu > ul > li > a');
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-
-        for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function (x) {
-                x.preventDefault();
-                let a = x.currentTarget;
-                let href = a.getAttribute("href");
-                let element = document.querySelector(href);
-                let top = element.offsetTop;
-                // window.scrollTo(0, top - 80);
-
-                let currentTop = window.scrollY;
-                let targetTop = top - 80;
-                let s = targetTop - currentTop;
-                let t = Math.abs((s / 100) * 300);
-                if (t > 500) { t = 500 }
-
-                const coords = { y: currentTop };
-                const tween = new TWEEN.Tween(coords)
-                    .to({ y: targetTop }, t)
-                    .easing(TWEEN.Easing.Cubic.InOut)
-                    .onUpdate(() => {
-                        window.scrollTo(0, coords.y);
-                    })
-                    .start();
-            }
-        }
-        
-        
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+  <script src="./js/init-swiper.js"></script>
+  <script src="./js/sticky-topbar.js"></script>
+  <script src="./js/auto-slide-up.js"></script>
+  <script src="./js/smoothly-navigation.js"></script>
 </body>
 
 </html>
