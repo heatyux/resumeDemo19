@@ -313,7 +313,8 @@ section.portfolio {
 }
 
 .skills h2,
-.portfolio h2 {
+.portfolio h2,
+.message h2 {
   font-weight: bold;
   text-align: center;
   font-size: 34px;
@@ -378,7 +379,7 @@ section.portfolio .swiper-container {
 
 section.portfolio {
   max-width: 860px;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 
 section.portfolio .swiper-button-prev,
@@ -387,4 +388,15 @@ section.portfolio .swiper-button-next {
   height: 60px;
   border-radius: 50%;
   background-color: white;
+}
+
+section.message ol {
+  max-width: 700px;
+  margin: 0 auto;
+  border-top: 1px solid #DDD;
+}
+
+section.message ol > li {
+  padding: 16px;
+  border-bottom: 1px solid #DDD;
 }
