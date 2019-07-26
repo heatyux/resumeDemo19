@@ -150,22 +150,26 @@
     <section data-x class="portfolio" id="siteWorks">
       <h2>作品集</h2>
       <!-- Slider main container -->
-      <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <img class="swiper-slide" src="./imgs/works/demo-keyboard.png">
-          <img class="swiper-slide" src="./imgs/works/demo-canvas.jpg">
-          <img class="swiper-slide" src="./imgs/works/demo-slides.png">
+      <div id="mySlides">
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <img class="swiper-slide" src="./imgs/works/demo-keyboard.png">
+            <img class="swiper-slide" src="./imgs/works/demo-canvas.jpg">
+            <img class="swiper-slide" src="./imgs/works/demo-slide.png">
+          </div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+
+  <!-- 模块化 -->
   <script src="./js/init-swiper.js"></script>
   <script src="./js/sticky-topbar.js"></script>
   <script src="./js/auto-slide-up.js"></script>
